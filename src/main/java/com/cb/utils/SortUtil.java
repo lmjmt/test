@@ -1,0 +1,34 @@
+package com.cb.utils;
+
+/**
+ * Created by mt on 2018/8/21.
+ */
+public class SortUtil {
+
+    /*
+ * 冒泡排序
+ */
+    public static int[] BubbleSort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {//外层循环控制排序趟数
+            for (int j = 0; j < arr.length - 1 - i; j++) {//内层循环控制每一趟排序多少次
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {6, 3, 8, 2, 9, 1};
+        System.out.println("排序前数组为：");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        BubbleSort(arr);
+    }
+
+
+}
